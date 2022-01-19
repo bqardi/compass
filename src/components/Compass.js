@@ -29,7 +29,7 @@ function Degrees({direction}){
 	return (
 		<div className="Degrees">
 			<span className="Degrees__direction">N</span>
-			<span className="Degrees__number">{-direction}&deg;</span>
+			<span className="Degrees__number">{(-direction).toFixed(1)}&deg;</span>
 		</div>
 	);
 }
