@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <Compass direction={calibrationHandler()} />
       <p>Point your device towards north and press this button to calibrate:</p>
-      <button onClick={calibrate}>Calibrate</button>
+      <button className="App__button" onClick={calibrate}>Calibrate</button>
     </div>
   );
 }

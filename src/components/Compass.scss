@@ -68,7 +68,7 @@
 		height: $needleWidth + 0px;
 		border: min(3vw, 16px) solid rgb(197, 151, 36);
 		border-radius: 50%;
-		box-shadow: 0 0 25px 0 rgb(197, 151, 36);
+		// box-shadow: 0 0 25px 0 rgb(197, 151, 36);
 	}
 	&__circle{
 		$circleWidth: 50px;
@@ -76,7 +76,7 @@
 		height: $circleWidth;
 		border-radius: 50%;
 		border: 8px solid gold;
-		box-shadow: 0 0 25px 0 gold;
+		// box-shadow: 0 0 25px 0 gold;
 		transform: translateY(max(-190px, -35vw));
 	}
 }
