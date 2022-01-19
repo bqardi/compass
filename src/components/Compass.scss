@@ -1,0 +1,98 @@
+@use "sass:math";
+
+.Compass{
+	position: relative;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vw;
+	max-width: 500px;
+	max-height: 500px;
+	border: min(3vw, 16px) solid gold;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: goldenrod;
+	box-shadow: 0 0 25px rgb(197, 151, 36) inset;
+}
+
+.Degrees{
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&__number{
+		transform: translate(5px);
+		font-size: 2rem;
+	}
+	&__direction{
+		font-size: 3rem;
+		line-height: 0.75;
+	}
+}
+
+.Needle{
+	$needleWidth: 120;
+	$tipWidth: math.sqrt(($needleWidth * $needleWidth) * 0.5);
+	position: relative;
+	z-index: 1;
+	background-color: gold;
+	width: $needleWidth + 0px;
+	height: $needleWidth + 0px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&::before{
+		content: "";
+		position: absolute;
+		z-index: 2;
+		top: $needleWidth * -0.07px;
+		background-color: gold;
+		width: $tipWidth + 0px;
+		height: $tipWidth + 0px;
+		transform: rotate(45deg);
+		border-top-right-radius: $needleWidth * 0.25px $needleWidth * 0.125px;
+		border-bottom-left-radius: $needleWidth * 0.125px $needleWidth * 0.25px;
+	}
+	&::after{
+		content: "";
+		position: absolute;
+		width: $needleWidth + 0px;
+		height: $needleWidth + 0px;
+		border: min(3vw, 16px) solid rgb(197, 151, 36);
+		border-radius: 50%;
+		box-shadow: 0 0 25px 0 rgb(197, 151, 36);
+	}
+	&__circle{
+		$circleWidth: 50px;
+		width: $circleWidth;
+		height: $circleWidth;
+		border-radius: 50%;
+		border: 8px solid gold;
+		box-shadow: 0 0 25px 0 gold;
+		transform: translateY(max(-190px, -38vw));
+	}
+}
+
+.Rose{
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__point{
+		position: absolute;
+		font-size: 1.4rem;
+	}
+	&__letter{
+		font-size: 2rem;
+	}
+	&__translate{
+		transform: translateY(max(-190px, -38vw));
+	}
+}
