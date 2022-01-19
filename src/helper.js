@@ -4,7 +4,6 @@ export function compassHeading( alpha, beta, gamma ) {
   var _y = gamma ? gamma * degtorad : 0; // gamma value
   var _z = alpha ? alpha * degtorad : 0; // alpha value
 
-  var cX = Math.cos( _x );
   var cY = Math.cos( _y );
   var cZ = Math.cos( _z );
   var sX = Math.sin( _x );
