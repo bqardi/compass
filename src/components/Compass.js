@@ -12,9 +12,9 @@ function Compass({direction, needleRotate}){
 	return (
 		<div className="Compass">
 			<div className="Compass__content">
-				<Needle direction={needleRotate ? -direction : null} />
-				<Degrees direction={-direction} />
-				<Rose direction={needleRotate ? null : -direction} />
+				<Needle direction={needleRotate ? direction : null} />
+				<Degrees direction={direction} />
+				<Rose direction={needleRotate ? null : direction} />
 			</div>
 		</div>
 	);
