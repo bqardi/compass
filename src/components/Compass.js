@@ -33,7 +33,8 @@ function Degrees({direction}){
 
 	useEffect(() => {
 		let text = "";
-		let deg = -direction;
+		let deg = direction === 0 ? 0 : 360 - direction;
+		console.log(deg)
 		if (deg < 68 || deg > 292) {
 			text += "N";
 		} else if (deg > 112 && deg < 248) {

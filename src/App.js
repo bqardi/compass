@@ -14,7 +14,7 @@ function App() {
     let alpha = direction.alpha - calibratedOffset;
     if (alpha < 0) alpha = alpha + 360;
     if (alpha > 360) alpha = alpha - 360;
-    return -alpha;
+    return alpha;
   }
 
 	useEffect(() => {
