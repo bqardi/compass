@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Compass from './components/Compass';
 import './App.scss';
-import { compassHeading } from "./helper";
 
 function App() {
 	const [direction, setDirection] = useState({absolute: false, alpha: 0});
@@ -9,10 +8,8 @@ function App() {
 	useEffect(() => {
 		window.addEventListener("deviceorientation", handleOrientation, true);
 		function handleOrientation(e){
-      const {absolute, alpha, beta, gamma} = e;
-      const heading = compassHeading(alpha, beta, gamma);
-      console.log(heading);
-			setDirection({absolute, alpha: heading});
+      const {absolute, alpha} = e;
+			setDirection({absolute, alpha});
 		}
 		return () => window.removeEventListener("deviceorientation", handleOrientation, true);
 	}, []);
