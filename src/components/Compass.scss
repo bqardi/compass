@@ -2,18 +2,21 @@
 
 .Compass{
 	position: relative;
-	box-sizing: border-box;
-	width: 100vw;
-	height: 100vw;
+	width: 100%;
 	max-width: 500px;
-	max-height: 500px;
-	border: min(3vw, 16px) solid gold;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: goldenrod;
-	box-shadow: 0 0 25px rgb(197, 151, 36) inset;
+	padding-top: min(100%, 500px);
+	&__content{
+		position: absolute;
+		inset: 0;
+		box-sizing: border-box;
+		border: min(3vw, 16px) solid gold;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: goldenrod;
+		box-shadow: 0 0 25px rgb(197, 151, 36) inset;
+	}
 }
 
 .Degrees{
@@ -74,7 +77,7 @@
 		border-radius: 50%;
 		border: 8px solid gold;
 		box-shadow: 0 0 25px 0 gold;
-		transform: translateY(max(-190px, -38vw));
+		transform: translateY(max(-190px, -35vw));
 	}
 }
 
@@ -87,12 +90,12 @@
 	align-items: center;
 	&__point{
 		position: absolute;
-		font-size: 1.4rem;
+		font-size: clamp(0.8rem, 4vw, 1.4rem);
 	}
 	&__letter{
-		font-size: 2rem;
+		font-size: clamp(1.2rem, 5vw, 2rem);
 	}
 	&__translate{
-		transform: translateY(max(-190px, -38vw));
+		transform: translateY(max(-190px, -35vw));
 	}
 }
