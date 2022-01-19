@@ -1,4 +1,5 @@
 @use "sass:math";
+@import "../variables";
 
 .Compass{
 	position: relative;
@@ -9,13 +10,12 @@
 		position: absolute;
 		inset: 0;
 		box-sizing: border-box;
-		border: min(3vw, 16px) solid gold;
+		border: min(3vw, 16px) solid $theme;
 		border-radius: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: goldenrod;
-		box-shadow: 0 0 25px rgb(197, 151, 36) inset;
+		background-color: darken($theme, 20);
 	}
 }
 
@@ -27,6 +27,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	color: $theme-font-dark;
 	&__number{
 		transform: translate(5px);
 		font-size: 2rem;
@@ -42,7 +43,7 @@
 	$tipWidth: math.sqrt(($needleWidth * $needleWidth) * 0.5);
 	position: relative;
 	z-index: 1;
-	background-color: gold;
+	background-color: $theme;
 	width: $needleWidth + 0px;
 	height: $needleWidth + 0px;
 	border-radius: 50%;
@@ -54,7 +55,7 @@
 		position: absolute;
 		z-index: 2;
 		top: $needleWidth * -0.07px;
-		background-color: gold;
+		background-color: $theme;
 		width: $tipWidth + 0px;
 		height: $tipWidth + 0px;
 		transform: rotate(45deg);
@@ -66,17 +67,15 @@
 		position: absolute;
 		width: $needleWidth + 0px;
 		height: $needleWidth + 0px;
-		border: min(3vw, 16px) solid rgb(197, 151, 36);
+		border: min(3vw, 16px) solid darken($theme, 25);
 		border-radius: 50%;
-		// box-shadow: 0 0 25px 0 rgb(197, 151, 36);
 	}
 	&__circle{
 		$circleWidth: 50px;
 		width: $circleWidth;
 		height: $circleWidth;
 		border-radius: 50%;
-		border: 8px solid gold;
-		// box-shadow: 0 0 25px 0 gold;
+		border: 8px solid $theme;
 		transform: translateY(max(-190px, -35vw));
 	}
 }
@@ -84,10 +83,10 @@
 .Rose{
 	position: absolute;
 	inset: 0;
-	z-index: 3;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: $theme-font;
 	&__point{
 		position: absolute;
 		font-size: clamp(0.8rem, 4vw, 1.4rem);
